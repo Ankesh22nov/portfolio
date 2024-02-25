@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
 :root{
   --font: 'Lora', serif;
   --font2:'Amaranth', sans-serif;
+  --font3:"Tenor Sans", sans-serif;
 }
 
 *{
@@ -13,12 +15,12 @@
 text-transform: capitalize;
 }
 ::-webkit-scrollbar{
-  width: 3px;
+  width: 0;
   height: 0;
 }
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: #0f0f0f
-}
+} */
 body{
   scroll-behavior: smooth;
   height: 100vh;
@@ -47,9 +49,9 @@ ul{
 .main_div{
   width: 100%;
   height: 100%;
-  background: #110904;
-  color: white;
- font-family: var(--font);
+  background: white;
+  color: black;
+ font-family: var(--font3);
 position: relative;
 top: 2.5rem;
 padding: 2% 0;
@@ -67,18 +69,32 @@ padding: 2% 0;
   /* background:cyan;
   color: crimson */
 }
+
 .navbar_main_div{
   overflow-y: hidden;
-  background-color: #333;
+  background-color: white;
+  color: black;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
+  box-shadow: rgb(235, 231, 226) 0px 5px 10px
+}
+.navbar-toggler svg{
+color: #000;
+font-size: 2rem
+}
+.dark_light_mode{
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
 }
 .header{
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
 padding:2px 3%;
+overflow-x: hidden;
 }
 .home{
 margin: 2% 0;
@@ -103,7 +119,7 @@ height: 90vh;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: left
+  justify-content: space-between;
 }
 .intro_right{
   margin:0 3%;
@@ -119,7 +135,10 @@ height: 90vh;
    border: 5px solid white
 
  }
-
+.profile_img{
+  box-shadow: #000 5px 5px 90px;
+  border-radius: 50%
+}
  #home_section2{
   background: white;
   color: #000;
@@ -164,6 +183,8 @@ skill span{
 }
 .progress_bar{
   margin: 2% 0;
+  /* display: flex;
+  justify-content: space-between */
 }
 .progress-bar{
   display: flex;
@@ -171,7 +192,7 @@ skill span{
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: rgb(13, 36, 17);
+  background: cyan;
 
 }
 #grid_skill_div{
@@ -179,6 +200,10 @@ skill span{
   grid-template-columns: 1fr 1fr;
   gap: 5%;
   margin: 2% 0;
+}
+.about{
+  height: 50%;
+  background: whitesmoke
 }
 .about_profile{
   height: 50%;
@@ -251,14 +276,14 @@ place-content: center;
 width: 80%;
 }
 #about_card{
-  box-shadow: 5px 5px 10px rgba(231, 227, 227, 0.856);
+  box-shadow: 5px 5px 10px rgba(131, 121, 121, 0.466);
   transition: box-shadow .2s
 }
 #about_card:hover{
-  box-shadow:inset 2px 2px 5px rgb(199, 196, 196)
+  box-shadow:inset 2px 2px 5px rgba(121, 117, 117, 0.596)
 }
 .card{
-  box-shadow: 2px 2px 7px rgb(255,255,255,0.3);
+  box-shadow: 2px 2px 10px rgba(128, 119, 119, 0.3);
   transition: box-shadow .2s
 }
 .card img{
@@ -267,7 +292,7 @@ width: 80%;
   object-fit: contain
 }
 .card:hover{
-  box-shadow: 5px 5px 10px rgb(65, 65, 68)
+  box-shadow: 5px 5px 10px rgba(87, 84, 84, 0.322)
 
 }
 
@@ -277,8 +302,8 @@ width: 80%;
 
  @media screen and (max-width: 1420px) and (min-width: 650px) { 
   .intro_right div{
-    height: 25vw;
-    width: 60%;
+    height: auto;
+    width: 30vw;
   }
   /* .home{
     height: 87vh;
@@ -291,6 +316,9 @@ width: 80%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 80vh;
       }
+      /* .home{
+        grid-template-rows: 100vh;
+      } */
   }
   @media screen and (max-width: 650px) and (min-width: 450px) { 
     .intro_right div{
@@ -315,6 +343,10 @@ width: 80%;
             .contact{
               width: 25rem;
             }
+            .menu{
+              width: 50%;
+            }
+            /* .home{    grid-template-rows: 50vh 50vh} */
     }
     @media screen and (max-width: 450px) and (min-width: 100px) {
       .what_i_do{
@@ -339,6 +371,12 @@ width: 80%;
               .contact{
                 width: 17rem;
               }
+              .menu{
+                width: 70%;
+              }
+              /* .home{
+                grid-template-rows: 50vh 50vh;
+              } */
     }
  
 
